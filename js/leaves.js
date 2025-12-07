@@ -94,36 +94,47 @@ class Particle {
 }
 
   update() {
-    // Slow dreamy fall
+    // fall movement
     this.y += this.speedY;
     this.x += this.speedX;
-  
-    // Gentle rotation
     this.angle += this.angularSpeed;
   
-    // Subtle attraction to mouse for parallax effect
-    if (mouse.x && mouse.y && Math.random() < 0.3) {
-       ...
+    if (mouse.x && mouse.y) {
+      let dx = mouse.x - this.x;
+      let dy = mouse.y - this.y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+  
+      // gentle parallax drift
+      if (Math.random() < 0.3) {
+        this.x += dx * 0.002;
+        this.y += dy * 0.002;
+      }
+  
+      // lighten + softly grow when cursor near
+      if (dist < 180) {
+        this.opacity = Math.min(this.opacity + 0.01, 0.7);
+        this.size += 0.02;
+      } else {
+        // return to normal
+        this.opacity = Math.max(this.opacity - 0.003, 0.1);
+        this.size = Math.max(this.size - 0.02, 6);
+      }
     }
   
-    // Fade-out for cursor-spawned petals
-    if (this.opacity > 0.01 && this.size < 8) {
-       ...
-    }
-  
-    // Reset when leaving screen
+    // Reset leaves after falling out of view
     if (this.y > canvas.height + 40) {
-       this.reset();
+      this.reset();
     }
   }
-
-
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = -10;
-    this.opacity = Math.random() * 0.4 + 0.1;
+  
+  
+  
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = -10;
+      this.opacity = Math.random() * 0.4 + 0.1;
+    }
   }
-}
 
 let particles = [];
 
