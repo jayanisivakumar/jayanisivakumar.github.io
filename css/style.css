@@ -26,7 +26,7 @@ html {
 section {
   padding: 3rem 6rem 2rem 12rem;
   min-height: 100vh;
-  scroll-margin-top: 1.5rem;
+  scroll-margin-top: -1rem;
   scroll-margin-bottom: 2rem;
 }
 
