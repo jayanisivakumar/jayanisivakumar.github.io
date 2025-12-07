@@ -73,13 +73,24 @@
   <section id="contact" class="section">
     <h2>Contact</h2>
   </section>
-
-  <!-- Scripts -->
-  <script src="js/leaves.js"></script>
-  <script src="js/typewriter.js"></script>
+  
   <!-- Scroll Buttons -->
   <div id="scroll-arrow-up" class="scrollbar-arrow">▲</div>
   <div id="scroll-arrow-down" class="scrollbar-arrow">▼</div>
 
+  <!-- Scripts -->
+  <script src="js/leaves.js"></script>
+  <script src="js/typewriter.js"></script>
+
+  <script>
+    document.getElementById("scroll-arrow-up").onclick = () => {
+      window.scrollBy({ top: -80, behavior: "smooth" });
+    };
+
+    document.getElementById("scroll-arrow-down").onclick = () => {
+      window.scrollBy({ top: 80, behavior: "smooth" });
+    };
+  </script>
+  
 </body>
 </html>
