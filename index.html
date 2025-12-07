@@ -11,105 +11,109 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-  
 <body>
 
-  <!-- LEAF ANIMATION -->
+  <!-- LEAF ANIMATION (background) -->
   <canvas id="leafCanvas"></canvas>
 
-  <!-- VERTICAL NAVBAR -->
-  <nav class="side-nav">
-    <a class="nav-item" href="#home">🏡 Home</a>
-    <a class="nav-item" href="#about">🍃 About</a>
-    <a class="nav-item" href="#experience">🌾 Experience</a>
-    <a class="nav-item" href="#projects">🪵 Projects</a>
-    <a class="nav-item" href="#contact">🕊️ Contact</a>
-  </nav>
+  <!-- SCROLLABLE CONTENT WRAPPER -->
+  <div id="scroll-wrapper">
 
+    <!-- VERTICAL NAVBAR -->
+    <nav class="side-nav">
+      <a class="nav-item" href="#home">🏡 Home</a>
+      <a class="nav-item" href="#about">🍃 About</a>
+      <a class="nav-item" href="#experience">🌾 Experience</a>
+      <a class="nav-item" href="#projects">🪵 Projects</a>
+      <a class="nav-item" href="#contact">🕊️ Contact</a>
+    </nav>
+
+    <!-- HERO / LANDING PAGE -->
+    <section id="home" class="section hero">
+      <div class="hero-content">
+        <h1>Hello, I'm <span id="typed-name"></span></h1>
+        <p class="subtitle">Tech Enthusiast • Student • Building Human-Centered Software</p>
+
+        <div class="button-row">
+          <a class="btn primary" href="https://www.linkedin.com/in/jayanisiva/" target="_blank">
+            <img src="assets/linkedin-cloud.png" class="icon-cloud"> LinkedIn
+          </a>
+        
+          <a class="btn secondary"
+             href="https://drive.google.com/file/d/1hoQYd7sWPmJVUF4VbZ3hANOWsbG5vw1V/view?usp=sharing"
+             target="_blank">
+            <img src="assets/resume-cloud.png" class="icon-cloud"> Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-bg"></div>
+        <img src="assets/JayaniSivakumar_Photo.jpg" alt="Jayani Photo">
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I enjoy building meaningful things, simplifying complexity, and creating tech that feels warm and human.</p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+    </section>
+
+  </div> <!-- end #scroll-wrapper -->
+
+
+  <!-- CUSTOM SCROLLBAR COLUMN (right side) -->
   <div class="custom-scrollbar">
-    <div id="scroll-arrow-up" class="scroll-arrow">▲</div>
+    <div id="scroll-up" class="scroll-btn">▲</div>
     <div class="scroll-track">
       <div class="scroll-thumb"></div>
     </div>
-    <div id="scroll-arrow-down" class="scroll-arrow">▼</div>
+    <div id="scroll-down" class="scroll-btn">▼</div>
   </div>
 
-
-  <!-- HERO / LANDING PAGE -->
-  <section id="home" class="section hero">
-
-    <div class="hero-content">
-      <h1>Hello, I'm <span id="typed-name"></span></h1>
-      <p class="subtitle">Tech Enthusiast • Student • Building Human-Centered Software</p>
-
-      <div class="button-row">
-        <a class="btn primary" href="https://www.linkedin.com/in/jayanisiva/" target="_blank">
-          <img src="assets/linkedin-cloud.png" class="icon-cloud"> LinkedIn
-        </a>
-      
-        <a class="btn secondary" 
-           href="https://drive.google.com/file/d/1hoQYd7sWPmJVUF4VbZ3hANOWsbG5vw1V/view?usp=sharing" 
-           target="_blank">
-          <img src="assets/resume-cloud.png" class="icon-cloud"> Resume
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-photo">
-      <div class="photo-bg"></div>
-      <img src="assets/JayaniSivakumar_Photo.jpg" alt="Jayani Photo">
-    </div>
-
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I enjoy building meaningful things, simplifying complexity, and creating tech that feels warm and human.</p>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-  </section>
-  
-  <!-- Scroll Buttons -->
-  <div id="scroll-arrow-up" class="scrollbar-arrow">▲</div>
-  <div id="scroll-arrow-down" class="scrollbar-arrow">▼</div>
 
   <!-- Scripts -->
   <script src="js/leaves.js"></script>
   <script src="js/typewriter.js"></script>
+
+  <!-- Custom scrollbar behavior -->
   <script>
-  document.getElementById("scroll-arrow-up").onclick = () => {
-    window.scrollBy({ top: -120, behavior: "smooth" });
-  };
-  
-  document.getElementById("scroll-arrow-down").onclick = () => {
-    window.scrollBy({ top: 120, behavior: "smooth" });
-  };
-  
-  /* Sync custom thumb to real scroll position */
-  window.addEventListener("scroll", () => {
-    const track = document.querySelector(".scroll-track");
-    const thumb = document.querySelector(".scroll-thumb");
-  
-    let scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    
-    thumb.style.marginTop = scrollPercent * (track.clientHeight - thumb.clientHeight) + "px";
-  });
+    const wrapper = document.getElementById("scroll-wrapper");
+    const thumb   = document.querySelector(".scroll-thumb");
+    const track   = document.querySelector(".scroll-track");
+
+    // Click arrows to scroll
+    document.getElementById("scroll-up").onclick = () => {
+      wrapper.scrollBy({ top: -120, behavior: "smooth" });
+    };
+
+    document.getElementById("scroll-down").onclick = () => {
+      wrapper.scrollBy({ top: 120, behavior: "smooth" });
+    };
+
+    // Move thumb as content scrolls
+    wrapper.addEventListener("scroll", () => {
+      const maxScroll    = wrapper.scrollHeight - wrapper.clientHeight;
+      const ratio        = maxScroll > 0 ? wrapper.scrollTop / maxScroll : 0;
+      const maxThumbMove = track.clientHeight - thumb.clientHeight;
+      thumb.style.top    = (ratio * maxThumbMove) + "px";
+    });
   </script>
 
-  
 </body>
 </html>
