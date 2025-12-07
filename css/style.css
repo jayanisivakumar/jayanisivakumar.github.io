@@ -5,10 +5,22 @@ body {
   font-family: "Inter", sans-serif;
   color: #3e3b32;
   overflow-x: hidden;
+  overflow-y: hidden;   /* Hides browser scrollbar */
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Scrollable page wrapper */
+#scroll-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;      /* Firefox */
+}
+
+#scroll-wrapper::-webkit-scrollbar {
+  width: 0;                   /* Chrome/Safari hide scrollbar */
 }
 
 section {
@@ -128,6 +140,7 @@ h1, h2 {
   opacity: 0.9;
 }
 
+/* LEFT NAVBAR */
 .side-nav {
   position: fixed;
   left: 1.2rem;
@@ -144,13 +157,13 @@ h1, h2 {
   align-items: center;
   justify-content: center;
 
-  width: 135px;        /* SMALLER WIDTH */
-  padding: 0.45rem 0.2rem; /* LESS HEIGHT */
+  width: 135px;
+  padding: 0.45rem 0.2rem;
   
   background: #e7ebdf;
   border-radius: 12px;
 
-  font-size: 1.05rem;  /* slightly smaller */
+  font-size: 1.05rem;
   font-weight: 600;
   color: #47563c;
   text-decoration: none;
@@ -166,6 +179,7 @@ h1, h2 {
   transform: translateX(6px);
 }
 
+/* Leaves canvas */
 #leafCanvas {
   position: fixed;
   top: 0;
@@ -176,63 +190,65 @@ h1, h2 {
   z-index: -1;
 }
 
-/* Force scrollbar to display */
-body {
-  overflow-y: scroll;
-}
+/* ----------------------------------------------------------
+   CUSTOM SCROLLBAR COLUMN
+---------------------------------------------------------- */
 
-/* Full scrollbar theme */
-::-webkit-scrollbar {
-  width: 16px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f3f1eb; /* soft cream */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #b7c8b1; /* sage green */
-  border-radius: 10px;
-  border: 3px solid #f3f1eb; /* padding effect */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #9fb49a;
-}
-
-/* Arrow buttons styled to match scrollbar */
-.scrollbar-arrow {
+.custom-scrollbar {
   position: fixed;
-  right: 0;                 /* attaches to scrollbar */
-  width: 16px;
-  height: 16px;
-
-  background: #b7c8b1;     /* sage */
-  color: #f9f8f4;          /* light text */
-  font-size: 10px;
-  font-weight: bold;
-
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 22px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  background: #f3f1eb;
+  z-index: 9999;
+}
 
+/* Up / Down buttons */
+.scroll-btn {
+  width: 22px;
+  height: 26px;
+  background: #b7c8b1;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   user-select: none;
-  z-index: 99999;
-
-  border-left: 1px solid #a3b59e;
+  border-bottom: 1px solid #a7b59e;
 }
 
-#scroll-arrow-up {
-  top: 0;
-  border-bottom: 1px solid #a3b59e;
-}
-
-#scroll-arrow-down {
-  bottom: 0;
-  border-top: 1px solid #a3b59e;
-}
-
-.scrollbar-arrow:hover {
+.scroll-btn:hover {
   background: #9fb49a;
+}
+
+/* Scroll track */
+.scroll-track {
+  flex: 1;
+  width: 6px;
+  background: #e2ebde;
+  border-radius: 4px;
+  margin: 6px 0;
+  position: relative;
+}
+
+/* Thumb */
+.scroll-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 60px;
+  background: #8fa48a;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+.scroll-thumb:hover {
+  opacity: 1;
 }
