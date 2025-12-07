@@ -5,60 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jayani Sivakumar • Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-left">
-      <h2>Jayani Sivakumar</h2>
-    </div>
-    <nav class="nav-right">
-      <a href="about.html">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="resume.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <!-- BACKGROUND ANIMATION -->
+  <canvas id="flowerCanvas"></canvas>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-left">
+  <!-- VERTICAL NAVBAR -->
+  <nav class="side-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-      <div class="tag">North Carolina State University • Computer Science</div>
-
-      <h1>Hello, I'm <span>Jayani Sivakumar</span></h1>
-      <h3>Student • Tech Enthusiast • Friendly Gal</h3>
-
-      <div class="button-row">
-        <a class="btn primary" href="https://www.linkedin.com/in/jayanisiva/" target="_blank">
-          <img src="assets/linkedin-icon.svg" class="icon"> LinkedIn
-        </a>
-
-        <a class="btn secondary" href="https://drive.google.com/file/d/1hoQYd7sWPmJVUF4VbZ3hANOWsbG5vw1V/view?usp=sharing" target="_blank">
-          <img src="assets/download-icon.svg" class="icon"> View Resume
-        </a>
-      </div>
-
-      <div class="location">
-        <span>📍 Raleigh, NC</span>
-        <span class="dot"></span>
-        <span>Ready to learn more!</span>
-      </div>
-
-    </div>
-
-    <div class="hero-right">
-      <div class="image-stack">
-        <div class="bg-shape"></div>
-        <img src="assets/JayaniSivakumar_Photo.jpg" alt="Jayani Photo">
-      </div>
-    </div>
-
+  <!-- MAIN PAGE CONTENT -->
+  <section id="home" class="section hero">
+    <h1>Hello, I'm <span>Jayani Sivakumar</span> 🌸</h1>
+    <p class="subtitle">Tech Enthusiast • Student • Friendly Gal</p>
   </section>
 
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Insert cute but professional blurb here 🌼</p>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+  </section>
+
+  <script src="js/flowers.js"></script>
 </body>
 </html>
