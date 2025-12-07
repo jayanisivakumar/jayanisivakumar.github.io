@@ -253,61 +253,15 @@ h1, h2 {
   opacity: 1;
 }
 
-/* ----------------------------------------------------------
-   ABOUT SECTION
----------------------------------------------------------- */
-
-.about-section {
-  padding-top: 6rem;
-}
-
-.about-title {
-  margin-bottom: 2rem;
-  font-size: 2.8rem;
-}
-
-.about-container {
-  display: flex;
-  gap: 4rem;
-  max-width: 1100px;
-  margin-top: 2rem;
-
-  border-left: 3px solid #c8d5c3; /* sage divider */
-  padding-left: 2.5rem;
-}
-
-.about-left {
-  min-width: 260px;
-  font-size: 1.1rem;
-  line-height: 1.7rem;
-  color: #4b5943;
-}
-
-.about-left p {
-  margin: 0.4rem 0;
-}
-
-.about-left strong {
-  color: #3c4a33;
-}
-
-.about-right {
-  flex: 1;
-  font-size: 1.15rem;
-  color: #5a5a4d;
-  line-height: 1.9rem;
-}
-
-
-/* BUTTON ROW (About Section) */
+/* About-section buttons inside left column */
 .about-button-row {
-  margin-top: 2.2rem;
+  margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
 }
 
 .about-button-row .btn {
-  padding: 0.85rem 1.4rem;
+  padding: 0.9rem 1.4rem;   /* same as landing */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -316,8 +270,7 @@ h1, h2 {
   font-size: 1rem;
 }
 
-.about-button-row .btn .icon-cloud {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+.about-button-row .icon-cloud {
+  width: 32px;
+  height: 32px;
 }
