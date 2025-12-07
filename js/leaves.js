@@ -40,33 +40,58 @@ class Particle {
   }
 
   draw() {
-    ctx.save();
-    ctx.globalAlpha = this.opacity;
+  ctx.save();
+  ctx.globalAlpha = this.opacity;
 
-    ctx.translate(this.x, this.y);
-    ctx.rotate(this.angle);
-    ctx.globalCompositeOperation = "lighter";
-    let color = this.colors[this.type].replace("OP", this.opacity);
+  ctx.translate(this.x, this.y);
+  ctx.rotate(this.angle);
+  ctx.globalCompositeOperation = "lighter";
 
-    if (this.type === 0) {
-      ctx.beginPath();
-      ctx.ellipse(0, 0, this.size * 0.4, this.size, Math.PI / 4, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-    } else if (this.type === 1) {
-      ctx.beginPath();
-      ctx.ellipse(0, 0, this.size * 0.3, this.size * 0.4, Math.PI / 3, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-    } else {
-      ctx.beginPath();
-      ctx.arc(0, 0, this.size * 0.35, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-    }
+  let color = this.colors[this.type].replace("OP", this.opacity);
+  ctx.fillStyle = color;
 
-    ctx.restore();
+  // --- Shape Types ---
+  if (this.type === 0) {
+    // 🌿 Pastel leaf (curved sides, pointed tip)
+    ctx.beginPath();
+    ctx.moveTo(0, -this.size);
+    ctx.bezierCurveTo(
+      this.size * 0.8, -this.size * 0.2,
+      this.size * 0.8,  this.size * 0.2,
+      0, this.size
+    );
+    ctx.bezierCurveTo(
+      -this.size * 0.8, this.size * 0.2,
+      -this.size * 0.8, -this.size * 0.2,
+      0, -this.size
+    );
+    ctx.fill();
+
+  } else if (this.type === 1) {
+    // 🌾 Long eucalyptus leaf
+    ctx.beginPath();
+    ctx.moveTo(0, -this.size * 1.4);
+    ctx.bezierCurveTo(
+      this.size * 0.6, -this.size * 0.3,
+      this.size * 0.6,  this.size * 0.3,
+      0, this.size * 1.4
+    );
+    ctx.bezierCurveTo(
+      -this.size * 0.6, this.size * 0.3,
+      -this.size * 0.6, -this.size * 0.3,
+      0, -this.size * 1.4
+    );
+    ctx.fill();
+
+  } else {
+    // ● Watercolor dot
+    ctx.beginPath();
+    ctx.arc(0, 0, this.size * 0.35, 0, Math.PI * 2);
+    ctx.fill();
   }
+
+  ctx.restore();
+}
 
   update() {
     // Slow dreamy fall
@@ -102,7 +127,7 @@ class Particle {
 
 let particles = [];
 
-for (let i = 0; i < 70; i++) {
+for (let i = 0; i < 40; i++) {
   particles.push(new Particle());
 }
 
