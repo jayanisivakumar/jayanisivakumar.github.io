@@ -1,45 +1,47 @@
-const canvas = document.getElementById("flowerCanvas");
+const canvas = document.getElementById("leafCanvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let flowers = [];
+class Leaf {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 16 + 8;
+    this.speedY = Math.random() * 0.3 + 0.1;
+    this.speedX = Math.random() * 0.4 - 0.2;
+    this.opacity = Math.random() * 0.5 + 0.3;
 
-class Flower {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-    this.size = Math.random() * 6 + 4;
-    this.opacity = 1;
-    this.speedY = Math.random() * 0.5 + 0.3;
-    this.color = `hsl(${Math.random()*40+300}, 70%, 75%)`;
+    this.color = `rgba(95, 122, 87, ${this.opacity})`; // moss green
   }
+
   update() {
-    this.y -= this.speedY;
-    this.opacity -= 0.015;
+    this.y += this.speedY;
+    this.x += this.speedX;
+
+    if (this.y > canvas.height) this.y = -10;
+    if (this.x > canvas.width || this.x < 0) this.x = Math.random() * canvas.width;
   }
+
   draw() {
-    ctx.globalAlpha = this.opacity;
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.ellipse(this.x, this.y, this.size * 0.6, this.size, Math.PI / 4, 0, Math.PI * 2);
     ctx.fillStyle = this.color;
     ctx.fill();
   }
 }
 
-window.addEventListener("mousemove", (e) => {
-  for (let i = 0; i < 3; i++) {
-    flowers.push(new Flower(e.x, e.y));
-  }
-});
+let leaves = [];
+for (let i = 0; i < 40; i++) {
+  leaves.push(new Leaf());
+}
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  flowers = flowers.filter(f => f.opacity > 0);
-  flowers.forEach(f => {
-    f.update();
-    f.draw();
+  leaves.forEach((leaf) => {
+    leaf.update();
+    leaf.draw();
   });
   requestAnimationFrame(animate);
 }
