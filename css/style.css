@@ -26,6 +26,7 @@ html {
 section {
   padding: 6rem 6rem 4rem 12rem;
   min-height: 100vh;
+  scroll-margin-top: 2rem;
 }
 
 .section-title {
@@ -51,13 +52,13 @@ section {
   position: relative;
 }
 
-/* Vertical line like Maya’s */
+/* Vertical line */
 .with-divider::before {
   content: "";
   position: absolute;
   left: 320px;          /* aligns between the two columns */
   top: 0;
-  width: 1px;
+  width: 3px;
   height: 100%;
   background: linear-gradient(
     to bottom,
