@@ -121,3 +121,9 @@
   font-size: 1.05rem;
   transition: 0.25s ease-in-out;
 }
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
