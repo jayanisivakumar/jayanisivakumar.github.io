@@ -70,7 +70,8 @@ section {
 }
 
 .about-section {
-  padding-top: -3rem;
+  padding-top: 6rem;
+  scroll-margin-top: -3rem;
 }
 
 .about-grid {
