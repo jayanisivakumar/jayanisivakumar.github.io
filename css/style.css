@@ -253,24 +253,57 @@ h1, h2 {
   opacity: 1;
 }
 
-/* About-section buttons inside left column */
-.about-button-row {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
+/* ABOUT — Two column layout */
+.about-section {
+  padding-top: 4rem;
 }
 
-.about-button-row .btn {
-  padding: 0.9rem 1.4rem;   /* same as landing */
+.about-grid {
+  display: grid;
+  grid-template-columns: 330px auto;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.about-left p {
+  font-size: 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.label {
+  font-weight: 700;
+  color: #4b5943;
+}
+
+/* Buttons under details */
+.about-buttons {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* Match landing page button style (reuse existing .btn rules) */
+.about-buttons .btn {
+  padding: 0.9rem 1.6rem;
   display: flex;
   align-items: center;
   gap: 10px;
   border-radius: 30px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
-.about-button-row .icon-cloud {
-  width: 32px;
-  height: 32px;
+.about-right p {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
+  max-width: 750px;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
