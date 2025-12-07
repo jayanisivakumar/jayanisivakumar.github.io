@@ -5,22 +5,10 @@ body {
   font-family: "Inter", sans-serif;
   color: #3e3b32;
   overflow-x: hidden;
-  overflow-y: hidden;   /* Hides browser scrollbar */
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Scrollable page wrapper */
-#scroll-wrapper {
-  height: 100vh;
-  overflow-y: scroll;
-  scrollbar-width: none;      /* Firefox */
-}
-
-#scroll-wrapper::-webkit-scrollbar {
-  width: 0;                   /* Chrome/Safari hide scrollbar */
 }
 
 section {
