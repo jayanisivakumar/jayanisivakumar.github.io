@@ -26,6 +26,15 @@
     <a class="nav-item" href="#contact">🕊️ Contact</a>
   </nav>
 
+  <div class="custom-scrollbar">
+    <div id="scroll-arrow-up" class="scroll-arrow">▲</div>
+    <div class="scroll-track">
+      <div class="scroll-thumb"></div>
+    </div>
+    <div id="scroll-arrow-down" class="scroll-arrow">▼</div>
+  </div>
+
+
   <!-- HERO / LANDING PAGE -->
   <section id="home" class="section hero">
 
@@ -81,16 +90,26 @@
   <!-- Scripts -->
   <script src="js/leaves.js"></script>
   <script src="js/typewriter.js"></script>
-
   <script>
-    document.getElementById("scroll-arrow-up").onclick = () => {
-      window.scrollBy({ top: -80, behavior: "smooth" });
-    };
-
-    document.getElementById("scroll-arrow-down").onclick = () => {
-      window.scrollBy({ top: 80, behavior: "smooth" });
-    };
+  document.getElementById("scroll-arrow-up").onclick = () => {
+    window.scrollBy({ top: -120, behavior: "smooth" });
+  };
+  
+  document.getElementById("scroll-arrow-down").onclick = () => {
+    window.scrollBy({ top: 120, behavior: "smooth" });
+  };
+  
+  /* Sync custom thumb to real scroll position */
+  window.addEventListener("scroll", () => {
+    const track = document.querySelector(".scroll-track");
+    const thumb = document.querySelector(".scroll-thumb");
+  
+    let scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    
+    thumb.style.marginTop = scrollPercent * (track.clientHeight - thumb.clientHeight) + "px";
+  });
   </script>
+
   
 </body>
 </html>
