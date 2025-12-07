@@ -31,9 +31,10 @@ class Particle {
     this.angle = Math.random() * Math.PI * 2;
     this.angularSpeed = (Math.random() * 0.01 - 0.005);
 
-    const leafGreen = "rgba(173, 188, 170, OP)";
-    const eucalyptus = "rgba(199, 214, 202, OP)";
-    const watercolorDot = "rgba(210, 220, 210, OP)";
+    const leafGreen = "rgba(195, 210, 190, OP)";      // pastel sage
+    const eucalyptus = "rgba(220, 232, 220, OP)";     // pale eucalyptus
+    const watercolorDot = "rgba(235, 240, 233, OP)";  // soft white-green
+
 
     this.colors = [leafGreen, eucalyptus, watercolorDot];
   }
@@ -44,7 +45,7 @@ class Particle {
 
     ctx.translate(this.x, this.y);
     ctx.rotate(this.angle);
-
+    ctx.globalCompositeOperation = "lighter";
     let color = this.colors[this.type].replace("OP", this.opacity);
 
     if (this.type === 0) {
@@ -68,26 +69,29 @@ class Particle {
   }
 
   update() {
+    // Slow dreamy fall
     this.y += this.speedY;
     this.x += this.speedX;
-
+  
+    // Gentle rotation
     this.angle += this.angularSpeed;
-
+  
+    // Subtle attraction to mouse for parallax effect
     if (mouse.x && mouse.y && Math.random() < 0.3) {
-      let dx = (mouse.x - this.x) * 0.002;
-      let dy = (mouse.y - this.y) * 0.002;
-      this.x += dx;
-      this.y += dy;
+       ...
     }
-
+  
+    // Fade-out for cursor-spawned petals
     if (this.opacity > 0.01 && this.size < 8) {
-      this.opacity -= 0.01;
+       ...
     }
-
+  
+    // Reset when leaving screen
     if (this.y > canvas.height + 40) {
-      this.reset();
+       this.reset();
     }
   }
+
 
   reset() {
     this.x = Math.random() * canvas.width;
