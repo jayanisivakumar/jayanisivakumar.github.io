@@ -203,19 +203,23 @@ body {
 /* Arrow buttons styled to match scrollbar */
 .scrollbar-arrow {
   position: fixed;
-  right: 0;                /* align with scrollbar */
-  width: 16px;             /* same width as scrollbar */
-  height: 16px;            /* button size */
-  background: #b7c8b1;     /* sage green */
-  color: #f9f8f4;          /* white-ish text */
+  right: 0;                 /* attaches to scrollbar */
+  width: 16px;
+  height: 16px;
+
+  background: #b7c8b1;     /* sage */
+  color: #f9f8f4;          /* light text */
   font-size: 10px;
   font-weight: bold;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
   user-select: none;
   z-index: 99999;
-  cursor: pointer;
+
   border-left: 1px solid #a3b59e;
 }
 
@@ -229,7 +233,6 @@ body {
   border-top: 1px solid #a3b59e;
 }
 
-/* Hover effect */
 .scrollbar-arrow:hover {
   background: #9fb49a;
 }
