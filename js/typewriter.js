@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeEffect();
 });
+
+<script>
+document.getElementById("scroll-up").onclick = () => {
+  window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
+};
+
+document.getElementById("scroll-down").onclick = () => {
+  window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+};
+</script>
