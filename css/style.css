@@ -202,8 +202,7 @@ body {
 /* Scroll Buttons */
 .scroll-btn {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1rem;            /* move to right side */
   width: 40px;
   height: 40px;
   background: #dfe8d7;
@@ -221,16 +220,18 @@ body {
   transition: 0.25s ease;
 }
 
+/* Top arrow */
 #scroll-up {
   top: 1rem;
 }
 
+/* Bottom arrow */
 #scroll-down {
   bottom: 1rem;
 }
 
+/* Hover effect */
 .scroll-btn:hover {
   background: #d0dbc9;
-  transform: translateX(-50%) scale(1.1);
+  transform: scale(1.12);   /* soft enlarge */
 }
-
