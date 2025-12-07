@@ -24,9 +24,9 @@ html {
 }
 
 section {
-  padding: 3rem 6rem 3rem 12rem;
+  padding: 3rem 6rem 2rem 12rem;
   min-height: 100vh;
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 1.5rem;
   scroll-margin-bottom: 2rem;
 }
 
