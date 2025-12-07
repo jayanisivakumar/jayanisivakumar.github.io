@@ -1,23 +1,20 @@
+/* GLOBAL */
 body {
   margin: 0;
+  background: #faf7f2; /* cream cottage vibe */
+  background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
   font-family: "Inter", sans-serif;
-  background: #fffafc;
+  color: #3e3b32;
   overflow-x: hidden;
 }
 
-section {
-  padding: 6rem 4rem;
-  min-height: 100vh;
-}
-
 h1, h2 {
-  margin: 0;
-  color: #444;
-  text-shadow: 0 2px 6px rgba(255, 179, 204, 0.3);
+  font-family: "Playfair Display", serif;
+  color: #4b5943; /* deep moss green */
 }
 
-h1 span {
-  color: #ff77b4;
+span {
+  color: #7a8f72;
 }
 
 /* SIDE NAV */
@@ -28,55 +25,52 @@ h1 span {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  z-index: 1000;
+  gap: 1rem;
+  z-index: 10;
 }
 
 .side-nav a {
   text-decoration: none;
-  font-size: 1.1rem;
-  padding: 0.6rem 1rem;
+  background: #e9e2d8;
+  padding: 0.7rem 1rem;
   border-radius: 12px;
-  background: #ffe9f4;
-  color: #b74b85;
+  color: #5f6b57;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
 }
 
 .side-nav a:hover {
-  background: #ffb3d2;
-  color: white;
+  background: #dcd3c5;
   transform: translateX(6px);
 }
 
-/* HERO */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 12rem;
-  font-size: 2.8rem;
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  padding: 6rem 6rem 4rem 12rem;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
 }
 
 .subtitle {
-  margin-top: 1rem;
   font-size: 1.4rem;
-  color: #777;
+  margin-top: 1rem;
+  color: #6f6a5c;
 }
 
-/* BACKGROUND CANVAS */
-#flowerCanvas {
+/* CANVAS BACKGROUND */
+#leafCanvas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  inset: 0;
   pointer-events: none;
-  opacity: 0.9;
+  z-index: -1;
 }
 
-/* SMOOTH SCROLL */
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
