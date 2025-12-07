@@ -24,9 +24,9 @@ html {
 }
 
 section {
-  padding: -3rem 6rem 2rem 12rem;
+  padding: 3rem 6rem 2rem 12rem;
   min-height: 100vh;
-  scroll-margin-top: -3rem;
+  scroll-margin-top: 0rem;
 }
 
 .section-title {
@@ -71,7 +71,7 @@ section {
 
 .about-section {
   padding-top: 6rem;
-  scroll-margin-top: -3rem;
+  scroll-margin-top: 0rem;
 }
 
 .about-grid {
