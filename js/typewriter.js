@@ -1,12 +1,14 @@
-const nameText = "Jayani Sivakumar";
-let i = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const nameText = "Jayani Sivakumar";
+  let i = 0;
 
-function typeEffect() {
-  if (i < nameText.length) {
-    document.getElementById("typed-name").innerHTML += nameText.charAt(i);
-    i++;
-    setTimeout(typeEffect, 110); // typing speed
+  function typeEffect() {
+    if (i < nameText.length) {
+      document.getElementById("typed-name").textContent += nameText.charAt(i);
+      i++;
+      setTimeout(typeEffect, 110);
+    }
   }
-}
 
-window.onload = typeEffect;
+  typeEffect();
+});
