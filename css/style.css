@@ -1,29 +1,149 @@
+/* ------- GLOBAL ------- */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to bottom right, #f9fdfb, #eef7f3);
+  color: #222;
 }
 
-header {
-  background: #222;
-  color: white;
-  padding: 1rem;
-}
-
-nav a {
-  color: white;
+a {
   text-decoration: none;
+  color: inherit;
+}
+
+/* ------- NAVBAR ------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-right a {
+  margin-left: 2rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-right a:hover {
+  color: #2e855e;
+}
+
+/* ------- HERO SECTION ------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 3rem;
+}
+
+.hero-left {
+  max-width: 50%;
+}
+
+.tag {
+  display: inline-block;
+  background: #e8f7e9;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: #2e855e;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-left h1 {
+  font-size: 3.2rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.hero-left span {
+  color: #2e855e;
+}
+
+.hero-left h3 {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* ------- BUTTONS ------- */
+.buttons {
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 600;
   margin-right: 1rem;
+  font-size: 0.95rem;
 }
 
-main {
-  padding: 2rem;
-}
-
-footer {
-  background: #222;
+.primary {
+  background: #2e855e;
   color: white;
-  padding: 1rem;
-  text-align: center;
+}
+
+.primary:hover {
+  background: #256e4d;
+}
+
+.outline {
+  border: 2px solid #555;
+  color: #555;
+}
+
+.outline:hover {
+  border-color: #2e855e;
+  color: #2e855e;
+}
+
+/* ------- LOCATION ROW ------- */
+.location {
+  display: flex;
+  align-items: center;
+  color: #777;
+}
+
+.location .dot {
+  width: 6px;
+  height: 6px;
+  background: #2e855e;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+/* ------- IMAGE STACK ------- */
+.hero-right {
+  position: relative;
+}
+
+.image-stack {
+  position: relative;
+}
+
+.bg-shape {
+  width: 290px;
+  height: 350px;
+  background: #c6f5d3;
+  border-radius: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.image-stack img {
+  width: 290px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
 }
