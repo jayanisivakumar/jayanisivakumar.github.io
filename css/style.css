@@ -71,6 +71,10 @@ section {
   margin-top: 4rem;
 }
 
+.about-right {
+  margin-top: -1.5rem;
+}
+
 @media (max-width: 900px) {
   .with-divider::before {
     display: none;
