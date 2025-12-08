@@ -58,7 +58,7 @@ section {
 }
 
 .about-section {
-  padding-top: 3rem;
+  padding-top: 0rem;
   scroll-margin-top: 0rem;
   scroll-margin-top: 3rem;
 }
@@ -68,7 +68,7 @@ section {
   grid-template-columns: 320px auto;
   gap: 4rem;
   align-items: start;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 @media (max-width: 900px) {
