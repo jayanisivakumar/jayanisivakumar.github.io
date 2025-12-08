@@ -60,7 +60,7 @@ section {
 /* ABOUT — Two column layout */
 .about-section {
   padding-top: 1rem;       /* moves everything UP */
-  scroll-margin-top: 3rem; /* ensures nav jump shows full section */
+  scroll-margin-top: 2rem; /* ensures nav jump shows full section */
 }
 
 .about-grid {
@@ -68,7 +68,7 @@ section {
   grid-template-columns: 330px auto;
   gap: 3rem;
   align-items: start;
-  margin-top: 1rem;        /* reduces vertical gap */
+  margin-top: 3rem;        /* reduces vertical gap */
 }
 
 .about-left p {
@@ -99,7 +99,7 @@ section {
 }
 
 .about-right {
-  margin-top: -1rem; /* Only shifts right column upward */
+  margin-top: -4rem; /* Only shifts right column upward */
 }
 
 .about-right p {
