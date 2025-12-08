@@ -57,36 +57,61 @@ section {
   opacity: 0.5;
 }
 
+/* ABOUT — Two column layout */
 .about-section {
-  padding-top: 0rem;
-  scroll-margin-top: 0rem;
-  scroll-margin-top: 3rem;
+  padding-top: 1rem;       /* moves everything UP */
+  scroll-margin-top: 3rem; /* ensures nav jump shows full section */
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 320px auto;
-  gap: 4rem;
+  grid-template-columns: 330px auto;
+  gap: 3rem;
   align-items: start;
-  margin-top: 4rem;
+  margin-top: 1rem;        /* reduces vertical gap */
+}
+
+.about-left p {
+  font-size: 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.label {
+  font-weight: 700;
+  color: #4b5943;
+}
+
+/* Buttons under details */
+.about-buttons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.about-buttons .btn {
+  padding: 0.9rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
 .about-right {
-  margin-top: -1.5rem;
+  margin-top: -1rem; /* Only shifts right column upward */
+}
+
+.about-right p {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  max-width: 750px;
 }
 
 @media (max-width: 900px) {
-  .with-divider::before {
-    display: none;
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
-  }
-
-  .section-title {
-    font-size: 2.4rem;
-    justify-content: center;
   }
 }
 
