@@ -351,28 +351,19 @@ h1, h2 {
 /* ----------------------------
    EXPERIENCE (Option A)
 ---------------------------- */
-
 .experience-section {
   padding-top: 2rem;
 }
 
-.experience-subtitle {
-  margin-top: -1.2rem;
-  margin-bottom: 2.2rem;
-  color: #6f6a5c;
-  font-size: 1.15rem;
-  max-width: 850px;
-}
-
 .exp-block {
-  margin-bottom: 3rem;
+  margin-bottom: 3.2rem;
 }
 
 .exp-block-header {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.3rem;
 }
 
 .exp-icon {
@@ -387,16 +378,11 @@ h1, h2 {
   color: #4b5943;
 }
 
-.exp-divider {
-  height: 2px;
-  width: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(180, 190, 175, 0.55),
-    rgba(180, 190, 175, 0.12),
-    rgba(180, 190, 175, 0)
-  );
-  margin-bottom: 1.4rem;
+.exp-block-subtitle {
+  margin: 0.2rem 0 1.4rem 0;
+  color: #6f6a5c;
+  font-size: 1.1rem;
+  max-width: 900px;
 }
 
 /* Card */
@@ -404,11 +390,11 @@ h1, h2 {
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(208, 216, 199, 0.7);
   border-radius: 18px;
-  padding: 1.6rem 1.7rem;
   box-shadow: 0 10px 24px rgba(0,0,0,0.06);
   backdrop-filter: blur(6px);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   max-width: 980px;
+  overflow: hidden;
 }
 
 .exp-card:hover {
@@ -416,12 +402,35 @@ h1, h2 {
   box-shadow: 0 16px 34px rgba(0,0,0,0.10);
 }
 
+/* Clickable header area */
+.exp-toggle {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 1.55rem 1.7rem 1.25rem 1.7rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.exp-toggle:focus {
+  outline: 2px solid rgba(111, 143, 117, 0.35);
+  outline-offset: 4px;
+  border-radius: 18px;
+}
+
 .exp-card-top {
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
   align-items: baseline;
-  margin-bottom: 1rem;
+}
+
+.exp-right {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  white-space: nowrap;
 }
 
 .exp-role {
@@ -441,20 +450,51 @@ h1, h2 {
   color: #4b5943;
   font-weight: 600;
   font-size: 1rem;
-  white-space: nowrap;
   opacity: 0.9;
 }
 
+.exp-chevron {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(231, 235, 223, 0.9);
+  border: 1px solid rgba(208, 216, 199, 0.8);
+  color: #4b5943;
+  transition: transform 0.2s ease;
+}
+
+/* Overview (visible before expand) */
+.exp-overview {
+  margin: 0.9rem 0 0 0;
+  color: #3e3b32;
+  line-height: 1.55;
+  font-size: 1.05rem;
+  max-width: 920px;
+}
+
+/* Expanded content */
+.exp-details {
+  padding: 0 1.7rem 1.55rem 1.7rem;
+  border-top: 1px solid rgba(208, 216, 199, 0.6);
+}
+
 .exp-bullets {
-  margin: 0;
+  margin: 1.1rem 0 0 0;
   padding-left: 1.25rem;
   color: #3e3b32;
   line-height: 1.7;
-  font-size: 1.08rem;
+  font-size: 1.06rem;
 }
 
 .exp-bullets li {
-  margin: 0.65rem 0;
+  margin: 0.6rem 0;
+}
+
+/* Open state */
+.exp-accordion[data-open="true"] .exp-chevron {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 900px) {
@@ -462,7 +502,7 @@ h1, h2 {
     flex-direction: column;
     align-items: flex-start;
   }
-  .exp-date {
-    margin-top: 0.3rem;
+  .exp-right {
+    margin-top: 0.35rem;
   }
 }
