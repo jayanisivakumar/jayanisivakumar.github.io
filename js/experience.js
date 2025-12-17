@@ -1,27 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".exp-card");
+  const cards = document.querySelectorAll(".exp-accordion");
 
   cards.forEach((card) => {
-    const panel = card.querySelector(".exp-panel");
+    const toggle = card.querySelector(".exp-toggle");
+    const panel  = card.querySelector(".exp-details");
 
-    // safety: ensure starts closed
-    card.setAttribute("aria-expanded", "false");
-    if (panel) panel.hidden = true;
+    // safety: start closed
+    card.setAttribute("data-open", "false");
+    toggle.setAttribute("aria-expanded", "false");
+    panel.hidden = true;
 
-    card.addEventListener("click", () => {
-      const isOpen = card.getAttribute("aria-expanded") === "true";
+    toggle.addEventListener("click", () => {
+      const isOpen = card.getAttribute("data-open") === "true";
 
-      // close others (nice UX)
+      // close all other cards (accordion behavior)
       cards.forEach((other) => {
         if (other === card) return;
-        other.setAttribute("aria-expanded", "false");
-        const otherPanel = other.querySelector(".exp-panel");
-        if (otherPanel) otherPanel.hidden = true;
+        other.setAttribute("data-open", "false");
+        other.querySelector(".exp-toggle").setAttribute("aria-expanded", "false");
+        other.querySelector(".exp-details").hidden = true;
       });
 
-      // toggle this one
-      card.setAttribute("aria-expanded", String(!isOpen));
-      if (panel) panel.hidden = isOpen;
+      // toggle current card
+      card.setAttribute("data-open", String(!isOpen));
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      panel.hidden = isOpen;
     });
   });
 });
