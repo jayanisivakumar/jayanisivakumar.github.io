@@ -144,10 +144,6 @@
                 <div class="exp-chevron">▾</div>
               </div>
             </div>
-    
-            <p class="exp-overview">
-              Improving instructional clarity and reliability for MerryQuery, an LLM-powered programming tutor.
-            </p>
           </button>
     
           <div class="exp-details" hidden>
@@ -169,9 +165,6 @@
           <span class="exp-icon">⭐</span>
           <h3 class="exp-block-title">Leadership</h3>
         </div>
-        <p class="exp-block-subtitle">
-          Driving community impact through mentorship, organization, and student support.
-        </p>
     
         <article class="exp-card exp-accordion" data-open="false">
           <button class="exp-toggle" type="button" aria-expanded="false">
@@ -217,17 +210,6 @@
 
   </div> <!-- end #scroll-wrapper -->
 
-
-  <!-- CUSTOM SCROLLBAR COLUMN (right side) -->
-  <div class="custom-scrollbar">
-    <div id="scroll-up" class="scroll-btn">▲</div>
-    <div class="scroll-track">
-      <div class="scroll-thumb"></div>
-    </div>
-    <div id="scroll-down" class="scroll-btn">▼</div>
-  </div>
-
-
   <!-- Scripts -->
   <script src="js/leaves.js"></script>
   <script src="js/typewriter.js"></script>
@@ -235,26 +217,6 @@
 
   <!-- Custom scrollbar behavior -->
   <script>
-    const wrapper = document.getElementById("scroll-wrapper");
-    const thumb   = document.querySelector(".scroll-thumb");
-    const track   = document.querySelector(".scroll-track");
-
-    // Click arrows to scroll
-    document.getElementById("scroll-up").onclick = () => {
-      wrapper.scrollBy({ top: -120, behavior: "smooth" });
-    };
-
-    document.getElementById("scroll-down").onclick = () => {
-      wrapper.scrollBy({ top: 120, behavior: "smooth" });
-    };
-
-    // Move thumb as content scrolls
-    wrapper.addEventListener("scroll", () => {
-      const maxScroll    = wrapper.scrollHeight - wrapper.clientHeight;
-      const ratio        = maxScroll > 0 ? wrapper.scrollTop / maxScroll : 0;
-      const maxThumbMove = track.clientHeight - thumb.clientHeight;
-      thumb.style.top    = (ratio * maxThumbMove) + "px";
-    });
 
     // Make navbar links scroll the wrapper (not the body)
     document.querySelectorAll('.side-nav a[href^="#"]').forEach((link) => {
