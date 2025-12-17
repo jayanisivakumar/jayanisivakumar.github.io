@@ -433,3 +433,65 @@ h1, h2 {
 .exp-accordion[data-open="true"] .exp-chevron {
   transform: rotate(180deg);
 }
+
+/* ----------------------------
+   SKILLS
+---------------------------- */
+.skills-section {
+  padding-top: 2rem;
+}
+
+.skills-subtitle {
+  margin: -1.4rem 0 2rem 0;
+  color: #6f6a5c;
+  font-size: 1.1rem;
+  max-width: 900px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 2.2rem;
+  max-width: 1100px;
+}
+
+.skills-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(208, 216, 199, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
+  padding: 1.6rem 1.7rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.10);
+}
+
+.skills-card-title {
+  margin: 0 0 1.2rem 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  color: #4b5943;
+}
+
+.skills-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #3e3b32;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.skills-list li {
+  margin: 0.35rem 0;
+}
+
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    max-width: 850px;
+  }
+}
