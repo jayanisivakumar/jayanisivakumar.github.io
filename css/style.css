@@ -491,6 +491,15 @@ h1, h2 {
   margin: 0.35rem 0;
 }
 
+/* dim non-hovered skills (optional) */
+.skills-card:hover .skills-list li {
+  opacity: 0.75;
+}
+
+.skills-card:hover .skills-list li:hover {
+  opacity: 1;
+}
+
 @media (max-width: 1100px) {
   .skills-grid {
     grid-template-columns: 1fr;
