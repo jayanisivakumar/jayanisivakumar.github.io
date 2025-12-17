@@ -433,13 +433,3 @@ h1, h2 {
 .exp-accordion[data-open="true"] .exp-chevron {
   transform: rotate(180deg);
 }
-
-@media (max-width: 900px) {
-  .exp-card-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .exp-right {
-    margin-top: 0.35rem;
-  }
-}
