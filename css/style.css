@@ -353,99 +353,116 @@ h1, h2 {
 ---------------------------- */
 
 .experience-section {
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
-.section-subtitle {
+.experience-subtitle {
   margin-top: -1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
   color: #6f6a5c;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  max-width: 850px;
 }
 
-.experience-wrap {
+.exp-block {
+  margin-bottom: 3rem;
+}
+
+.exp-block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.exp-icon {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.exp-block-title {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #4b5943;
+}
+
+.exp-divider {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(180, 190, 175, 0.55),
+    rgba(180, 190, 175, 0.12),
+    rgba(180, 190, 175, 0)
+  );
+  margin-bottom: 1.4rem;
+}
+
+/* Card */
+.exp-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(208, 216, 199, 0.7);
+  border-radius: 18px;
+  padding: 1.6rem 1.7rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   max-width: 980px;
 }
 
-.experience-group-title {
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #4b5943;
-  margin: 2.2rem 0 1rem;
-}
-
-.exp-card {
-  width: 100%;
-  text-align: left;
-  border: 1px solid rgba(208, 216, 199, 0.9);
-  background: rgba(255, 255, 255, 0.55);
-  border-radius: 18px;
-  padding: 1.4rem 1.6rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  cursor: pointer;
-  transition: 0.25s ease;
-  display: block;
-}
-
 .exp-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.10);
 }
 
 .exp-card-top {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: baseline;
+  margin-bottom: 1rem;
 }
 
 .exp-role {
-  font-family: "Playfair Display", serif;
-  font-size: 1.7rem;
+  margin: 0;
+  font-size: 1.55rem;
   color: #4b5943;
+  font-weight: 700;
+}
+
+.exp-org {
+  margin-top: 0.35rem;
+  color: #6f6a5c;
+  font-size: 1.05rem;
 }
 
 .exp-date {
+  color: #4b5943;
+  font-weight: 600;
   font-size: 1rem;
-  color: #6f6a5c;
   white-space: nowrap;
-}
-
-.exp-company {
-  margin-top: 0.35rem;
-  font-size: 1.05rem;
-  color: #47563c;
   opacity: 0.9;
 }
 
-.exp-panel {
-  margin-top: 1.1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(208, 216, 199, 0.9);
-  color: #3e3b32;
-}
-
-.exp-panel ul {
+.exp-bullets {
   margin: 0;
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
+  color: #3e3b32;
+  line-height: 1.7;
+  font-size: 1.08rem;
 }
 
-.exp-panel li {
-  margin: 0.6rem 0;
-  line-height: 1.55;
+.exp-bullets li {
+  margin: 0.65rem 0;
 }
 
-/* mobile */
 @media (max-width: 900px) {
   .exp-card-top {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .exp-date {
-    white-space: normal;
+    margin-top: 0.3rem;
   }
 }
-
