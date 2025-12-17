@@ -289,7 +289,8 @@ h1, h2 {
    EXPERIENCE (Option A)
 ---------------------------- */
 .experience-section {
-  padding-top: 2rem;
+  padding-top: 1rem;       /* moves everything UP */
+  scroll-margin-top: 2rem; /* ensures nav jump shows full section */
 }
 
 .exp-block {
@@ -438,7 +439,8 @@ h1, h2 {
    SKILLS
 ---------------------------- */
 .skills-section {
-  padding-top: 2rem;
+  padding-top: 1rem;       /* moves everything UP */
+  scroll-margin-top: 2rem; /* ensures nav jump shows full section */
 }
 
 .skills-subtitle {
