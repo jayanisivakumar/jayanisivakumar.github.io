@@ -684,6 +684,21 @@ h1, h2 {
   z-index: 2;
 }
 
+.proj-media--movie {
+  background: linear-gradient(140deg, rgba(255, 220, 230, 0.9), rgba(244, 248, 235, 0.9));
+}
+.proj-media--movie::before { content: "🎟️"; }
+
+.proj-media--ocr {
+  background: linear-gradient(140deg, rgba(220, 235, 255, 0.9), rgba(235, 246, 240, 0.9));
+}
+.proj-media--ocr::before { content: "🔎"; }
+
+.proj-media--sustain {
+  background: linear-gradient(140deg, rgba(215, 255, 210, 0.9), rgba(240, 248, 235, 0.9));
+}
+.proj-media--sustain::before { content: "🌍"; }
+
 /* Responsive */
 @media (max-width: 1100px) {
   .projects-grid {
