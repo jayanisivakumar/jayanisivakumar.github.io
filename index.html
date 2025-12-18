@@ -429,22 +429,47 @@
       </p>
     
       <div class="contact-links">
-        <a class="contact-link" href="mailto:jsivaku@ncsu.edu">Email</a>
-        <a class="contact-link" href="https://devpost.com/jsivaku?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener">
-          Devpost
+        <a class="contact-link"
+           href="https://mail.google.com/mail/?view=cm&fs=1&to=jsivaku@ncsu.edu"
+           target="_blank" rel="noopener">
+          📧 Email
         </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/jayanisiva/" target="_blank" rel="noopener">LinkedIn</a>
+      
+        <a class="contact-link"
+           href="https://github.com/jayanisivakumar"
+           target="_blank" rel="noopener">
+          💻 GitHub
+        </a>
+      
+        <a class="contact-link"
+           href="https://devpost.com/jsivaku?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+           target="_blank" rel="noopener">
+          🏆 Devpost
+        </a>
+      
+        <a class="contact-link"
+           href="https://www.linkedin.com/in/jayanisiva/"
+           target="_blank" rel="noopener">
+          🔗 LinkedIn
+        </a>
       </div>
+  
+      <form class="contact-form"
+            action="https://formspree.io/f/xzdppvow"
+            method="POST">
     
-      <!-- Replace action with your Formspree endpoint (recommended) -->
-      <form class="contact-form" action="#" method="POST">
+        <!-- helps Formspree format the email -->
+        <input type="hidden" name="_subject" value="New message from portfolio contact form">
+    
+        <!-- optional: redirect after submit -->
+        <!-- <input type="hidden" name="_redirect" value="https://YOURDOMAIN.com/#contact"> -->
+    
         <div class="contact-row">
           <input class="contact-input" type="text" name="name" placeholder="Name" required>
           <input class="contact-input" type="email" name="email" placeholder="Email" required>
         </div>
     
         <input class="contact-input" type="text" name="subject" placeholder="Subject" required>
-    
         <textarea class="contact-textarea" name="message" placeholder="Message" rows="10" required></textarea>
     
         <button class="contact-submit" type="submit">SEND MESSAGE</button>
