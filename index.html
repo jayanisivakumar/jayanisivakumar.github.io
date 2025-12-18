@@ -418,9 +418,35 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
+    <section id="contact" class="section contact-section">
+      <h2 class="contact-title">Get in touch</h2>
+      <p class="contact-subtitle">
+        If you want to contact me, fill out the following form and I will do my best to get back to you as soon as I can!
+      </p>
+    
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:jsivaku@ncsu.edu">Email</a>
+        <a class="contact-link" href="https://devpost.com/jsivaku?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener">
+          Devpost
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/jayanisiva/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    
+      <!-- Replace action with your Formspree endpoint (recommended) -->
+      <form class="contact-form" action="#" method="POST">
+        <div class="contact-row">
+          <input class="contact-input" type="text" name="name" placeholder="Name" required>
+          <input class="contact-input" type="email" name="email" placeholder="Email" required>
+        </div>
+    
+        <input class="contact-input" type="text" name="subject" placeholder="Subject" required>
+    
+        <textarea class="contact-textarea" name="message" placeholder="Message" rows="10" required></textarea>
+    
+        <button class="contact-submit" type="submit">SEND MESSAGE</button>
+      </form>
     </section>
+
 
   </div> <!-- end #scroll-wrapper -->
 
