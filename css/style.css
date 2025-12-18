@@ -23,7 +23,7 @@ section {
   font-weight: 700;
   color: #4b5943;
   text-align: left;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -58,10 +58,6 @@ section {
 }
 
 /* ABOUT — Two column layout */
-.about-section {
-  padding-top: 1rem;       /* moves everything UP */
-  scroll-margin-top: 2rem; /* ensures nav jump shows full section */
-}
 
 .about-grid {
   display: grid;
@@ -288,10 +284,6 @@ h1, h2 {
 /* ----------------------------
    EXPERIENCE (Option A)
 ---------------------------- */
-.experience-section {
-  padding-top: 1rem;       /* moves everything UP */
-  scroll-margin-top: 2rem; /* ensures nav jump shows full section */
-}
 
 .exp-block {
   margin-bottom: 3.2rem;
@@ -438,10 +430,6 @@ h1, h2 {
 /* ----------------------------
    SKILLS
 ---------------------------- */
-.skills-section {
-  padding-top: 1rem;       /* moves everything UP */
-  scroll-margin-top: 2rem; /* ensures nav jump shows full section */
-}
 
 .skills-subtitle {
   margin: -1.4rem 0 2rem 0;
