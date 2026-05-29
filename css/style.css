@@ -643,6 +643,11 @@ h1, h2 {
 }
 .proj-media--trail::before { content: "🌲"; }
 
+.proj-media--wolfcafe {
+  background: linear-gradient(140deg, rgba(226, 205, 184, 0.9), rgba(238, 247, 232, 0.9));
+}
+.proj-media--wolfcafe::before { content: "W"; }
+
 .proj-media--threat {
   background: linear-gradient(140deg, rgba(230, 220, 255, 0.9), rgba(235, 246, 240, 0.9));
 }
