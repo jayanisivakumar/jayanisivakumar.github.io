@@ -654,6 +654,11 @@ h1, h2 {
 }
 
 /* --- Project graphics (simple, cute gradients + icon stamp) --- */
+.proj-media--agent {
+  background: linear-gradient(140deg, rgba(216, 226, 255, 0.9), rgba(230, 248, 236, 0.9));
+}
+.proj-media--agent::before { content: "AI"; }
+
 .proj-media::after {
   content: "";
   position: absolute;
